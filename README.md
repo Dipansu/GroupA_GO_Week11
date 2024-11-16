@@ -13,6 +13,8 @@
 
  docker run -p 80:80 gpa_w11:v1
 
+ 
+the docker image : docker.io/dipansus/gpa_w11
 
 
 
