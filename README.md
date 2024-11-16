@@ -1,10 +1,10 @@
 # Commands:
 
- go mod init <path>
+ go mod init path #<path>
 
  go build .
 
- ./<filename>
+ ./filename    #<filename>
 
 
  ## for Docker file:
