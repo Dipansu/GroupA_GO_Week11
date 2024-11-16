@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1em;
+}
+
+h1 {
+    margin: 0;
+}
+
+.team {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.member {
+    width: 150px; /* Set a fixed width for each member container */
+    text-align: center;
+}
+
+.member img {
+    width: 100%; /* Make the image take up the full width of the container */
+    height: 150px; /* Set a fixed height to maintain consistency */
+    object-fit: cover; /* Crop the image to fit within the specified dimensions */
+    border-radius: 10px;
+}
+
+.member h2 {
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+
+.profile {
+    margin-top: 20px;
+}
+
+.profile img {
+    width: 200px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
