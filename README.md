@@ -91,11 +91,11 @@ The table below provides an overview of the GMIS test scenarios along with their
 | ---------------------------- | ------------------------------------------------------------------ | ---------- |
 | **TestServerInitialization** | Test server initialization to ensure it listens on port 80.        | PASS       |
 | **TestFileServing**          | Verify that static files are served correctly (File Server Route). | PASS       |
-| **TestDirectoryBrowsing**    | Ensure directory browsing is disabled and returns 403 Forbidden.   | PASS       |
+| **TestDirectoryBrowsing**    | Ensure directory browsing is disabled.                             | PASS       |
 
 ## Unit Test Scenario Details
 
-### T001 Testing HTTP Server Initialization
+### Testing HTTP Server Initialization
 
 - **Objective**: Verify the server initializes and listens on the correct port.
 - **Test Steps**:
@@ -105,7 +105,7 @@ The table below provides an overview of the GMIS test scenarios along with their
 
 ---
 
-### T002 Testing File Server Route (Static File Serving)
+### Testing File Server Route (Static File Serving)
 
 - **Objective**: Ensure the file server serves static files correctly.
 - **Test Steps**:
@@ -117,110 +117,20 @@ The table below provides an overview of the GMIS test scenarios along with their
 
 ---
 
-### T003 Handling Missing Files
-
-- **Objective**: Verify the server returns `404 Not Found` for non-existent files.
-- **Test Steps**:
-  1. Send a `GET` request to a non-existent file, e.g., `/nonexistent.html`.
-  2. Verify the response status code is `404 Not Found`.
-- **Expected Result**: The server handles missing files gracefully and returns `404 Not Found`.
-
----
-
-### T004 Directory Browsing Security
+## Directory Browsing Security
 
 - **Objective**: Ensure that directory browsing is disabled.
 - **Test Steps**:
-  1. Send a `GET` request to `/` or any directory path, e.g., `/img/`.
-  2. Check if directory contents are exposed.
-- **Expected Result**: Directory contents are not listed, and the server responds with `403 Forbidden` or an appropriate error.
+  1. Send a `GET` request to `/` or any directory path, e.g., `/img/` or `/css/`.
+  2. Check if directory browsing succeeds with an `HTTP 200 OK` status.
+- **Expected Result**: Directory browsing should not succeed. The server should not return `HTTP 200 OK`. Any other response status (e.g., `403 Forbidden`) is acceptable.
 
----
-
-### T005 Testing MIME Type Handling
-
-- **Objective**: Verify the server returns the correct `Content-Type` for various file types.
-- **Test Steps**:
-  1. Request files with extensions `.html`, `.css`, `.js`, `.png`, `.jpg`, etc.
-  2. Inspect the `Content-Type` header in the response.
-- **Expected Result**: Correct MIME types are returned for all file types.
-
----
-
-### T006 Performance Testing
-
-- **Objective**: Verify the server can handle concurrent requests without failure.
-- **Test Steps**:
-  1. Simulate multiple concurrent `GET` requests to `/`, `/css/style.css`, `/pages/member.html`, etc.
-  2. Monitor response times and error rates.
-- **Expected Result**: The server handles concurrent requests efficiently, and all responses are successful.
-
----
-
-### T007 Edge Case Testing for Large Files
-
-- **Objective**: Ensure the server handles large file transfers without crashing.
-- **Test Steps**:
-  1. Place a large file (e.g., >10MB) in the `./site` directory.
-  2. Request the large file and verify it is delivered completely.
-- **Expected Result**: The server successfully delivers large files without interruption.
-
----
-
-### T008 Security Testing
-
-- **Objective**: Ensure the server is protected against common vulnerabilities.
-- **Test Cases**:
-  - **Path Traversal**: Send a request like `/../main.go` and verify it is blocked.
-  - **Malformed Requests**: Send invalid HTTP requests and verify the server handles them gracefully.
-  - **Injection Attacks**: Attempt to inject malicious code into requests and ensure it is not executed.
-- **Expected Result**: The server rejects all malicious requests securely.
-
----
-
-### T009 Graceful Error Handling
-
-- **Objective**: Test that the server provides user-friendly error messages for unexpected issues.
-- **Test Steps**:
-  1. Simulate server errors (e.g., by removing a required file).
-  2. Verify that a clear and user-friendly error page is displayed instead of a raw error.
-- **Expected Result**: Friendly error messages are shown to users.
-
----
-
-### T0010 Test Configuration Flexibility
-
-- **Objective**: Ensure the server configuration can be adjusted easily.
-- **Test Steps**:
-  1. Mock configurations for port, directory paths, etc.
-  2. Start the server with different configurations and verify behavior.
-- **Expected Result**: The server adapts to configuration changes without issues.
-
----
-
-### T0011 Integration with a Reverse Proxy (Optional)
-
-- **Objective**: Ensure compatibility with reverse proxies like Nginx or Apache.
-- **Test Steps**:
-  1. Set up a reverse proxy to forward requests to the server.
-  2. Verify all routes function correctly through the proxy.
-- **Expected Result**: The server operates seamlessly behind a reverse proxy.
-
-# Issue/Enhancement Tracking
+# Issue Tracking
 
 ## Issues
 
 The table below shows the issues and bugs encountered in the application
 
-| **Issue ID** | **Description**                                        | **Assignee** | **Priority** | **Status** | **Status Date** | **Comments** |
-| ------------ | ------------------------------------------------------ | ------------ | ------------ | ---------- | --------------- | ------------ |
-| **I001**     | Piyush Iyer: Incorrect profile image and LinkedIn link | Swaroop      | High         | New        | 18-Nov-2024     |              |
-
-## Enhancements
-
-The table below outlines the enhancements for the application
-
-| **Enhancement ID** | **Description**                                                                                                          | **Assignee** | **Priority** | **Status** | **Status Date** | **Completion Date** | **Comments**            |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------ | ------------ | ---------- | --------------- | ------------------- | ----------------------- |
-| **E001**           | Display the team member's role under their name on the main page                                                         | Swaroop      | Medium       | New        | 18-Nov-2024     | TBD                 | Awaiting implementation |
-| **E002**           | Rearrange the team members in this order: Project Manager, Lead Developer, Developers, Testers, Documentation Specialist | Swaroop      | High         | New        | 18-Nov-2024     | TBD                 | Awaiting implementation |
+| **Issue ID** | **Description**                                        | **Assignee** | **Priority** | **Status** | **Status Date** | **Comments**        |
+| ------------ | ------------------------------------------------------ | ------------ | ------------ | ---------- | --------------- | ------------------- |
+| **I001**     | Piyush Iyer: Incorrect profile image and LinkedIn link | Swaroop      | High         | New        | 18-Nov-2024     | Profile Image Fixed |
