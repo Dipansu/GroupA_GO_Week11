@@ -212,7 +212,7 @@ The table below shows the issues and bugs encountered in the application
 
 | **Issue ID** | **Description**                                                      | **Assignee** | **Priority** | **Status** | **Status Date** | **Comments**                  |
 |--------------|----------------------------------------------------------------------|--------------|--------------|------------|-----------------|-------------------------------|
-| **I001**     | Error message appears when clicking Abhishek Mittal's profile image | Swaroop      | High         | New        | 18-Nov-2024      |   |
+| **I001**     | Piyush Iyer: Incorrect profile image and LinkedIn link | Swaroop      | High         | New        | 18-Nov-2024      |   |
 
 
 ## Enhancements
