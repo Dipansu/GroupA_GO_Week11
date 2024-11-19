@@ -204,3 +204,24 @@ The table below provides an overview of the GMIS test scenarios along with their
 - **Expected Result**: The server operates seamlessly behind a reverse proxy.
 
 
+
+# Issue/Enhancement Tracking
+
+## Issues
+The table below shows the issues and bugs encountered in the application
+
+| **Issue ID** | **Description**                                                      | **Assignee** | **Priority** | **Status** | **Status Date** | **Comments**                  |
+|--------------|----------------------------------------------------------------------|--------------|--------------|------------|-----------------|-------------------------------|
+| **I001**     | Error message appears when clicking Abhishek Mittal's profile image | Swaroop      | High         | New        | 18-Nov-2024      |   |
+
+
+## Enhancements
+The table below outlines the enhancements for the application
+
+| **Enhancement ID** | **Description**                                                      | **Assignee** | **Priority** | **Status** | **Status Date** | **Completion Date** | **Comments** |
+|--------------------|----------------------------------------------------------------------|--------------|--------------|------------|-----------------|---------------------|--------------|
+| **E001**           | Display the team member's role under their name on the main page     | Swaroop      | Medium       | New        | 18-Nov-2024      | TBD                 | Awaiting implementation |
+| **E002**           | Rearrange the team members in this order: Project Manager, Lead Developer, Developers, Testers, Documentation Specialist | Swaroop      | High         | New        | 18-Nov-2024      | TBD                 | Awaiting implementation  |
+
+
+
