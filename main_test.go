@@ -49,7 +49,7 @@ func TestDirectoryBrowsing(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Failed to make GET request: %v", err)
 	}
-	if resp.StatusCode == http.StatusOK {
+	if resp.StatusCode != http.StatusOK {
 		t.Fatalf("Expected directory browsing to be disabled, but it succeeded")
 	}
 }
